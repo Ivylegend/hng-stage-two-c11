@@ -1,113 +1,93 @@
+import { CTA } from "@/components/CTA";
+import { ImageBox } from "@/components/ImageBox";
+import { ImageCard } from "@/components/ImageCard";
+import { PaginationBox } from "@/components/PaginationBox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { imageDetails } from "@/constants";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="main mt-10">
+      <div className="px-20">
+        {/* HERO */}
+        <div className="flex items-center justify-center">
+          <Image src="/assets/image2.png" alt="girl" width={400} height={460} />
+          <Image src="/assets/image3.png" alt="girl" width={400} height={460} />
+          <Image src="/assets/image4.png" alt="girl" width={400} height={460} />
+        </div>
+
+        <div className="my-5 py-5">
+          <div className="flex justify-between items-center my-8">
+            <div className="flex gap-4">
+              <span className="flex gap-1 cursor-pointer text-[#1E1B1B]">
+                Colour <ChevronDown />
+              </span>
+              <span className="flex gap-1 cursor-pointer text-[#1E1B1B]">
+                Size <ChevronDown />
+              </span>
+              <span className="flex gap-1 cursor-pointer text-[#1E1B1B]">
+                Length <ChevronDown />
+              </span>
+              <span className="flex gap-1 cursor-pointer text-[#1E1B1B]">
+                Price <ChevronDown />
+              </span>
+              <span className="flex gap-1 cursor-pointer text-[#1E1B1B]">
+                Availability <ChevronDown />
+              </span>
+            </div>
+            <div className="flex items-end gap-2">
+              <p>Sort by:</p>
+              <Select>
+                <SelectTrigger className="w-[100px] h-8 rounded-none">
+                  <SelectValue placeholder="Latest" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="light">Latest</SelectItem>
+                  <SelectItem value="dark">Weekly</SelectItem>
+                  <SelectItem value="system">Monthly</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-between gap-y-16">
+            {imageDetails.map((item, index) => (
+              <ImageBox
+                key={index}
+                id={item.id}
+                image={item.image}
+                checkoutLink=""
+              />
+            ))}
+          </div>
+          {/* PAGINATION */}
+          <div className="my-8 flex justify-between w-full gap-5">
+            <p className="w-1/2">5 rows per page</p>
+            <PaginationBox />
+          </div>
+        </div>
+
+        {/* CATEGORIES */}
+        <div className="my-20">
+          <h2 className="font-medium text-2xl mb-5">
+            MORE CATEGORIES TO EXPLORE
+          </h2>
+          <div className="flex flex-wrap justify-between">
+            <ImageCard name="suit jackets" image="/assets/image2.png" />
+            <ImageCard name="jumpsuit" image="/assets/image11.png" />
+            <ImageCard name="longwear" image="/assets/image12.png" />
+            <ImageCard name="sweats" image="/assets/image5.png" />
+          </div>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <CTA />
     </main>
   );
 }
