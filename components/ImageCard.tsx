@@ -6,7 +6,7 @@ export const ImageCard = ({ name, image }: { name: string; image: string }) => {
       <div className="object-contain h-[200px] w-[250px] md:h-[400px] md:w-[300px]">
         <img
           src={image}
-          alt="woman"
+          alt={name}
           className="w-[250px] md:w-[300px] h-full object-cover object-top"
         />
       </div>

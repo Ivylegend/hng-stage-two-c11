@@ -99,7 +99,7 @@ export default async function CartPage({ params }: ItemPageProps) {
           {/* RETURNS */}
           <div className="border border-[#F0D3DC] bg-[#f7eef1] min-h-20 p-5">
             <span className="flex items-center gap-2">
-              <img src="/assets/box.png" alt="" />
+              <img src="/assets/box.png" alt="box" />
               <p className="font-medium text-sm">RETURNS</p>
             </span>
             <p className="text-sm text-[#1E1B1B] my-5 font-normal">
