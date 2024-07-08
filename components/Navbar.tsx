@@ -12,11 +12,11 @@ const italiana = Italiana({ subsets: ["latin"], variable: "--font-sans", weight:
 export const Navbar = () => {
   const pathName = usePathname();
   return (
-    <nav className="px-20 py-2 w-full">
+    <nav className="hidden md:block px-20 py-2 w-full">
       <div className="flex items-center justify-between my-5">
         <p>Shipping</p>
         {/* <p className={`capitalize font-normal text-[#1E1B1B] text-4xl ${italiana.className}`}>JANORE</p> */}
-        <img src="/assets/JANORE.svg" alt="" />
+        <img src="/assets/JANORE.svg" alt="logo" />
         <div className="flex items-center gap-4">
           <p>Nk Harry</p>
           <ChevronDown />

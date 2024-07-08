@@ -10,7 +10,7 @@ import {
 
 export const PaginationBox = () => {
   return (
-    <Pagination className="justify-end">
+    <Pagination className="justify-center sm:justify-end">
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious href="#" />

@@ -15,15 +15,13 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
   checkoutLink,
 }) => {
   return (
-    <div className=" hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md">
-      <div className="relative w-[300px] h-[400px] object-contain object-center">
+    <div className="hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md">
+      <div className="relative w-[150px] h-[200px] sm:w-[300px] sm:h-[400px] object-contain object-center">
         <Link href={`/product/${id}`}>
-          <Image
+          <img
             src={image}
             alt="fashion women"
-            width={300}
-            height={400}
-            className="h-full w-full"
+            className="w-auto h-full sm:h-full sm:w-auto"
           />
         </Link>
         <div className="absolute z-10 bg-white rounded-full w-10 h-10 cursor-pointer right-3 top-3 flex items-center justify-center">
@@ -33,8 +31,8 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
 
       <div className="p-3 flex flex-col gap-1 items-start">
         <p className="font-semibold text-xl">Imani</p>
-        <p className="text-[#7E7E7E]">Short description of the dress</p>
-        <p className="text-2xl font-semibold">$150</p>
+        <p className="text-[#7E7E7E] text-sm md:text-normal">Short description of the dress</p>
+        <p className="text-lg sm:text-xl md:text-2xl md:font-semibold">$150</p>
         <Button className="bg-black p-3 uppercase text-white rounded-none w-[132px]">
           <Link href={checkoutLink}>add to cart</Link>
         </Button>

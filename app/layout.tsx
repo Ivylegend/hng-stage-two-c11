@@ -3,6 +3,8 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { MobileNavbar } from "@/components/MobileNavbar";
+import { MobileFooter } from "@/components/MobileFooter";
 
 const inter = Montserrat({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -23,8 +25,10 @@ export default function RootLayout({
           Sales Now!!! Save up to 50%
         </div>
         <Navbar />
+        <MobileNavbar />
         {children}
         <Footer />
+        <MobileFooter />
       </body>
     </html>
   );

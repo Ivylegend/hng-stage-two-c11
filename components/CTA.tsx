@@ -1,8 +1,9 @@
 import { RadioGroupItems } from "./RadioGroup";
+import { Button } from "./ui/button";
 
 export const CTA = () => {
   return (
-    <div className="w-full bg-[#F5F5F5] px-5 md:px-20 flex flex-col gap-10 md:flex-row h-[320px] items-center justify-center">
+    <div className="w-full bg-[#F5F5F5] px-5 py-8 md:py-0 md:px-20 flex flex-col gap-10 md:flex-row md:h-[320px] sm:items-center justify-center">
       <div className="max-w-sm">
         <h3 className="font-medium text-xl mb-5">SIGN UP FOR JANORE UPDATES</h3>
         <p>
@@ -17,15 +18,15 @@ export const CTA = () => {
         </div>
         <div className="">
           <p className="mb-2">Email Sign-up</p>
-          <span className="flex w-full max-w-sm space-x-2">
+          <span className="flex flex-col gap-4 sm:gap-0 sm:flex-row w-full max-w-sm sm:space-x-2">
             <input
               type="text"
               placeholder="Enter email"
-              className="bg-transparent border-b-2 border-black w-[400px] px-5"
+              className="bg-transparent border-b border-black w-full sm:w-[400px] px-5"
             />
-            <button className="py-3 px-4 bg-black text-white w-[140px] hover:bg-gray-400 hover:text-black">
+            <Button className="py-3 px-4 bg-black rounded-none text-white w-full sm:w-[140px] hover:bg-gray-400 hover:text-black">
               SUBSCRIBE
-            </button>
+            </Button>
           </span>
         </div>
       </div>
