@@ -20,9 +20,9 @@ export default async function CartPage({ params }: ItemPageProps) {
   return (
     <div>
       <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
-      <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col md:flex-row items-start gap-10 justify-center">
+      <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col md:flex-row items-start gap-10 md:gap-[72px] justify-center">
         <div className="">
-          <h2 className="mb-4">MY CART</h2>
+          <h2 className="mb-4 font-medium text-xl">MY CART</h2>
           <div className="border-t border-b border-gray-200 py-4 flex flex-col md:flex-row w-full justify-between md:w-[650px]">
             <div className="flex gap-10">
               <Image
@@ -32,18 +32,18 @@ export default async function CartPage({ params }: ItemPageProps) {
                 height={150}
               />
               <div className="flex flex-col justify-between">
-                <p>{itemData.name}</p>
-                <div className="flex gap-4">
+                <p className="font-medium text-base">{itemData.name}</p>
+                <div className="flex gap-4 w-24 justify-between">
                   <p>Color: </p>
-                  <div className="w-5 h-5 border bg-black"></div>
+                  <div className="w-8 h-8 border bg-black"></div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 w-24 justify-between">
                   <p>Size: </p>
-                  <div className="w-5 h-5 border border-black text-center text-sm flex items-center justify-center">
+                  <div className="w-8 h-8 border border-black text-center text-sm flex items-center justify-center">
                     M
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 w-24 justify-between">
                   <p>Price: </p>
                   <div className="">${itemData.price}</div>
                 </div>
@@ -73,8 +73,8 @@ export default async function CartPage({ params }: ItemPageProps) {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/5">
-          <h2 className="mb-4">Cart Summary</h2>
+        <div className="w-full md:max-w-[300px]">
+          <h2 className="mb-4 font-medium text-xl">Cart Summary</h2>
           <div className="border-t border-b border-gray-200 py-4 flex justify-between">
             <p>{itemData.name}</p>
             <p>${itemData.price}</p>
@@ -88,7 +88,7 @@ export default async function CartPage({ params }: ItemPageProps) {
           </Button>
 
           {/* RETURNS */}
-          <div className="border border-[#F0D3DC] bg-[#f7eef1] min-h-20 p-5">
+          <div className="border border-[#F0D3DC] bg-[#FEF7F9] min-h-[216px] min-w-[300px] p-5">
             <span className="flex items-center gap-2">
               <img src="/assets/box.png" alt="box" />
               <p className="font-medium text-sm">RETURNS</p>

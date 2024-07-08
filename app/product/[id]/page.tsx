@@ -50,50 +50,59 @@ export default async function ItemPage({ params }: ItemPageProps) {
           <div className="w-full md:w-3/5">
             <ItemAccordion />
           </div>
-          <div className="w-full md:w-3/5 flex flex-col gap-5">
-            <p className="font-medium text-lg">{itemData.name}</p>
-            <p className="text-2xl font-semibold">${itemData.price}</p>
+          <div className="w-full md:w-2/5 flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
+              <p className="font-semibold text-lg">{itemData.name}</p>
+              <p className="font-medium text-lg text-[#606060]">
+                ${itemData.price}
+              </p>
+            </div>
 
             {/* COLORS */}
-            <p>Colors</p>
-            <div className="flex gap-4">
-              <div className="w-7 h-7 bg-red-500"></div>
-              <div className="w-7 h-7 bg-gray-500"></div>
-              <div className="w-7 h-7 bg-black"></div>
-              <div className="w-7 h-7 bg-green-500"></div>
+            <div className="flex flex-col gap-2">
+              <p className="font-medium">Colors</p>
+              <div className="flex gap-2">
+                <div className="w-8 h-8 bg-red-500"></div>
+                <div className="w-8 h-8 bg-gray-500"></div>
+                <div className="w-8 h-8 bg-black"></div>
+                <div className="w-8 h-8 bg-green-500"></div>
+              </div>
             </div>
 
             {/* SIZES */}
-            <div>
+            <div className="flex flex-col gap-2">
               <span className="flex justify-between items-center">
-                <p>Sizes</p>
+                <p className="font-medium">Sizes</p>
                 <p className="underline">Size Guide</p>
               </span>
-              <div className="flex gap-4">
-                <div className="w-7 h-7 border border-black text-center text-sm flex items-center justify-center">
+              <div className="flex gap-2">
+                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   XS
                 </div>
-                <div className="w-7 h-7 border border-black text-center text-sm flex items-center justify-center">
-                  SM
+                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
+                  S
                 </div>
-                <div className="w-7 h-7 border border-black text-center text-sm flex items-center justify-center">
+                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   M
                 </div>
-                <div className="w-7 h-7 border border-black text-center text-sm flex items-center justify-center">
+                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   L
                 </div>
-                <div className="w-7 h-7 border border-black text-center text-sm flex items-center justify-center">
+                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   XL
                 </div>
               </div>
             </div>
 
             {/* COUNTER */}
-            <NumberCounter />
+            <div className="flex flex-col gap-2">
+              <p className="font-medium">Quantity</p>
+              <NumberCounter />
+            </div>
 
             {/* BUTTON */}
-            <div className="flex items-center gap-2 justify-between">
-              <Button className="rounded-none w-3/4">
+            <div className="flex items-center gap-3 justify-between">
+              <Button className="rounded-none w-full">
                 <Link href={`/cart/${itemData.id}`}>ADD TO CART</Link>
               </Button>
               <Button

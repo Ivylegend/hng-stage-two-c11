@@ -38,7 +38,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
       <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
         <DialogContent>
           <DialogHeader>
-            <DialogDescription className="flex flex-col items-center justify-center gap-10">
+            <DialogDescription className="flex flex-col items-center justify-center gap-8 md:p-8">
               <div>
                 <Image
                   src="/assets/eclipses.svg"
@@ -48,13 +48,13 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <p className="font-medium text-xl text-black">Your order was successful</p>
-                <p className="leading-8">Thanks for your purchase!</p>
-                <p className="leading-8">Your order number is #123-456</p>
-                <p className="leading-8">You will receive an email comfirmining your order details</p>
+                <p className="font-medium text-xl text-black mb-4">Your order was successful</p>
+                <p className="text-[#1E1B1B] font-normal text-center">Thanks for your purchase!</p>
+                <p className="text-[#1E1B1B] font-normal text-center">Your order number is #123-456</p>
+                <p className="text-[#1E1B1B] font-normal text-center">You will receive an email comfirmining your order details</p>
               </div>
               <div className="flex flex-col items-center gap-5">
-                <Button className="rounded-none">Track my order</Button>
+                <Button className="rounded-none py-3 px-6 w-[300px]">Track my order</Button>
                 <Link href="/" className="underline">
                   Go back home
                 </Link>
@@ -62,8 +62,8 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
-        <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col md:flex-row items-start gap-10 justify-center">
-          <div className="w-full md:w-3/5">
+        <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col md:flex-row items-start gap-10 md:gap-[72px] justify-center">
+          <div className="w-full md:w-[660px]">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="font-medium text-base sm:text-lg md:text-xl">
@@ -278,8 +278,8 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
             </Accordion>
           </div>
 
-          <div className="w-full md:w-1/5">
-            <h2 className="mb-4">Cart Summary</h2>
+          <div className="w-full md:w-[300px]">
+            <h2 className="mb-4 font-medium text-xl">Cart Summary</h2>
             <div className="border-t border-b border-gray-200 py-4 flex flex-col justify-between gap-5">
               <div className="flex w-full justify-between">
                 <p className="font-light text-sm">Item(s) total</p>
