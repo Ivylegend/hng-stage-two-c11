@@ -78,13 +78,15 @@ export default function Home() {
                 id={item.id}
                 image={item.image}
                 checkoutLink=""
+                description={item.description}
+                name={item.name}
               />
             ))}
           </div>
           {/* PAGINATION */}
           <div className="my-8 flex flex-col justify-center items-center sm:flex-row sm:justify-between w-full gap-5 px-5 md:px-0">
             <p className="w-full text-center sm:text-start sm:w-1/2">
-              5 rows per page
+              4 rows per page
             </p>
             <PaginationBox />
           </div>

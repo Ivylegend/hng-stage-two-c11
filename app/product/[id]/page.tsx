@@ -7,6 +7,7 @@ import { ItemCarousel } from "@/components/ItemCarousel";
 import { ItemAccordion } from "@/components/ItemAccordion";
 import { Button } from "@/components/ui/button";
 import { ImageCard } from "@/components/ImageCard";
+import { NumberCounter } from "@/components/Counter";
 
 interface ItemPageProps {
   params: { id: string; image: string; description: string; price: number };
@@ -37,7 +38,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
               <p className="text-[12px]">DRESSES</p>
             </Link>
             <ChevronRight size={16} />
-            <p className="text-[12px]">IMANI</p>
+            <p className="text-[14px] font-bold uppercase">{itemData.name}</p>
           </div>
           <div>
             <ItemCarousel image={itemData.image} />
@@ -88,23 +89,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
             </div>
 
             {/* COUNTER */}
-            <div className="flex">
-              <Button
-                variant={"outline"}
-                className="rounded-none w-7 h-7 border border-black text-sm flex items-center justify-center"
-              >
-                -
-              </Button>
-              <div className="w-7 h-7 border border-black text-center text-sm flex items-center justify-center">
-                1
-              </div>
-              <Button
-                variant={"outline"}
-                className="rounded-none w-7 h-7 border border-black text-sm flex items-center justify-center"
-              >
-                +
-              </Button>
-            </div>
+            <NumberCounter />
 
             {/* BUTTON */}
             <div className="flex items-center gap-2 justify-between">

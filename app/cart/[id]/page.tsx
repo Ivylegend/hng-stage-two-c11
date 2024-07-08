@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getItemData } from "@/lib/dataFetcher";
 import { Button } from "@/components/ui/button";
+import { NumberCounter } from "@/components/Counter";
 
 interface ItemPageProps {
   params: { id: string; image: string; description: string; price: number };
@@ -15,6 +16,7 @@ export default async function CartPage({ params }: ItemPageProps) {
   if (!itemData) {
     return notFound();
   }
+
   return (
     <div>
       <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
@@ -43,25 +45,12 @@ export default async function CartPage({ params }: ItemPageProps) {
                 </div>
                 <div className="flex gap-4">
                   <p>Price: </p>
-                  <div className="">$1200</div>
+                  <div className="">${itemData.price}</div>
                 </div>
-                <div className="flex">
-                  <Button
-                    variant={"outline"}
-                    className="rounded-none w-7 h-7 border text-sm flex items-center justify-center"
-                  >
-                    -
-                  </Button>
-                  <div className="w-7 h-7 border  text-center text-sm flex items-center justify-center">
-                    1
-                  </div>
-                  <Button
-                    variant={"outline"}
-                    className="rounded-none w-7 h-7 border text-sm flex items-center justify-center"
-                  >
-                    +
-                  </Button>
-                </div>
+                {/* Counter */}
+                <NumberCounter />
+
+                {/* for mobile */}
                 <div className="flex flex-row md:hidden gap-2 mt-5 justify-between">
                   <p className="underline text-xs sm:text-sm md:text-base cursor-pointer">
                     Remove
@@ -72,11 +61,13 @@ export default async function CartPage({ params }: ItemPageProps) {
                 </div>
               </div>
             </div>
-            <div className="hidden md:flex flex-row md:flex-col mt-5 md:mt-0 justify-between">
-              <p className="underline text-xs sm:text-sm md:text-base cursor-pointer">
+
+            {/* for desktop */}
+            <div className="hidden md:flex flex-row md:flex-col mt-5 md:mt-0 justify-between items-end">
+              <p className="underline text-xs sm:text-sm cursor-pointer">
                 Remove
               </p>
-              <p className="underline text-xs sm:text-sm md:text-base cursor-pointer">
+              <p className="underline text-xs sm:text-sm cursor-pointer">
                 Add to wishlist
               </p>
             </div>

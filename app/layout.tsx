@@ -21,8 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-black w-full h-12 text-center text-white flex items-center justify-center">
-          Sales Now!!! Save up to 50%
+        <div className="overflow-hidden bg-black w-full h-12 flex items-center">
+          <div className="announcement whitespace-nowrap text-white flex gap-20">
+           <p>Sales Now!!! Save up to 50%</p> 
+           <p>Sales Now!!! Save up to 50%</p> 
+           <p>Sales Now!!! Save up to 50%</p> 
+          </div>
         </div>
         <Navbar />
         <MobileNavbar />
