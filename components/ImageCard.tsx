@@ -7,7 +7,7 @@ export const ImageCard = ({ name, image }: { name: string; image: string }) => {
         <img
           src={image}
           alt="woman"
-          className="w-[250px] h-full object-cover object-top"
+          className="w-[250px] md:w-[300px] h-full object-cover object-top"
         />
       </div>
       <div className="flex flex-col items-center justify-center">

@@ -1,7 +1,6 @@
 // product/[id]/page.tsx
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Heart } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getItemData } from "@/lib/dataFetcher";
 import { Button } from "@/components/ui/button";

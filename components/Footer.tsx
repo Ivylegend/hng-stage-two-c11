@@ -4,8 +4,8 @@ import { MdFacebook } from "react-icons/md";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#FEEAF0] hidden w-full px-5 sm:px-10 md:px-20 py-12 md:flex justify-between flex-wrap items-start">
-      <div className="flex flex-col h-full items-center justify-center">
+    <div className="bg-[#FEEAF0] hidden md:max-h-[500px] w-full px-5 sm:px-10 md:px-20 py-12 md:flex justify-between flex-wrap items-start">
+      <div className="flex flex-col h-[200px] items-center gap-3 justify-center">
         <Image src="/assets/JANORE.svg" alt="logo" width={100} height={100} />
         <p className="text-sm text-center">Redefining Luxury</p>
       </div>

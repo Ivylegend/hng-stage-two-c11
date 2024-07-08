@@ -1,7 +1,6 @@
 // product/[id]/page.tsx
-import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Heart } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getItemData } from "@/lib/dataFetcher";
 import { ItemCarousel } from "@/components/ItemCarousel";
@@ -116,7 +115,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
                 className="rounded-none w-1/6 bg-transparent"
                 variant={"outline"}
               >
-                <Heart />
+                <img className="cursor-pointer" src="/assets/heart-vector.svg" alt="heart-icon" />
               </Button>
             </div>
           </div>

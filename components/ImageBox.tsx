@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { BiHeart } from "react-icons/bi";
-import { Button } from "./ui/button";
 import Link from "next/link";
 
 interface ImageBoxProps {
@@ -21,11 +18,11 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
           <img
             src={image}
             alt="fashion women"
-            className="w-auto h-full sm:h-full sm:w-auto"
+            className="w-auto h-full sm:h-full sm:w-auto object-cover"
           />
         </Link>
         <div className="absolute z-10 bg-white rounded-full w-10 h-10 cursor-pointer right-3 top-3 flex items-center justify-center">
-          <BiHeart />
+        <img className="cursor-pointer" src="/assets/heart-vector.svg" alt="heart-icon" />
         </div>
       </div>
 
@@ -33,9 +30,9 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
         <p className="font-semibold text-xl">Imani</p>
         <p className="text-[#7E7E7E] text-sm md:text-normal">Short description of the dress</p>
         <p className="text-lg sm:text-xl md:text-2xl md:font-semibold">$150</p>
-        <Button className="bg-black p-3 uppercase text-white rounded-none w-[132px]">
+        {/* <Button className="bg-black p-3 uppercase text-white rounded-none w-[132px]">
           <Link href={checkoutLink}>add to cart</Link>
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

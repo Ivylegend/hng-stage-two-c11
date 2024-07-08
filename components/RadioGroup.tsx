@@ -3,7 +3,7 @@ import { RadioGroupItem, RadioGroup } from "./ui/radio-group";
 
 export const RadioGroupItems = () => {
   return (
-    <RadioGroup defaultValue="male" className="flex gap-5">
+    <RadioGroup defaultValue="male" className="flex gap-5 justify-between">
       <div className="flex items-center space-x-2">
         <RadioGroupItem value="male" id="male" />
         <Label htmlFor="male">Male</Label>
