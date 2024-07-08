@@ -20,7 +20,7 @@ export default async function CartPage({ params }: ItemPageProps) {
   return (
     <div>
       <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
-      <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col md:flex-row items-start gap-10 md:gap-[72px] justify-center">
+      <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col lg:flex-row items-start gap-10 md:gap-[72px] justify-center">
         <div className="">
           <h2 className="mb-4 font-medium text-xl">MY CART</h2>
           <div className="border-t border-b border-gray-200 py-4 flex flex-col md:flex-row w-full justify-between md:w-[650px]">

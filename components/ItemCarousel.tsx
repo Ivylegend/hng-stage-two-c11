@@ -1,6 +1,4 @@
 import * as React from "react";
-
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 
 export function ItemCarousel({ image }: { image: string }) {
   return (
@@ -25,7 +22,7 @@ export function ItemCarousel({ image }: { image: string }) {
               <img
                 src={image}
                 alt={image}
-                className="w-[360px] h-[240px] object-cover object-top md:w-[420px] md:h-[460px]"
+                className="w-[100%] h-[400px] object-cover object-top md:w-[420px] md:h-[460px]"
               />
             </div>
           </CarouselItem>
