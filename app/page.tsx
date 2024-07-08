@@ -19,8 +19,8 @@ export default function Home() {
       <div className=" md:px-10 lg:px-20">
         {/* HERO */}
         <div className="flex items-center justify-center overflow-x-scroll px-5">
+          <Image src="/assets/big-jacket.png" alt="model" width={400} height={460} />
           <Image src="/assets/image3.png" alt="model2" width={400} height={460} />
-          <Image src="/assets/image2.png" alt="model" width={400} height={460} />
           <Image src="/assets/image4.png" alt="model3" width={400} height={460} />
         </div>
 
@@ -96,8 +96,8 @@ export default function Home() {
             MORE CATEGORIES TO EXPLORE
           </h2>
           <div className="flex overflow-x-auto gap-5 md:gap-0 md:flex-wrap justify-between">
+            <ImageCard name="suit jackets" image="/assets/suit-jacket.png" />
             <ImageCard name="jumpsuit" image="/assets/image11.png" />
-            <ImageCard name="suit jackets" image="/assets/image2.png" />
             <ImageCard name="loungewear" image="/assets/image12.png" />
             <ImageCard name="sweats" image="/assets/image5.png" />
           </div>
