@@ -129,7 +129,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
           <div className="flex overflow-x-auto gap-5 md:gap-0 md:flex-wrap justify-between">
             <ImageCard name="suit jackets" image="/assets/image2.png" />
             <ImageCard name="jumpsuit" image="/assets/image11.png" />
-            <ImageCard name="longwear" image="/assets/image12.png" />
+            <ImageCard name="loungewear" image="/assets/image12.png" />
             <ImageCard name="sweats" image="/assets/image5.png" />
           </div>
         </div>
