@@ -12,6 +12,8 @@ export const imageDetails = [
     id: "2",
     description: "Short chiffon black dress",
     name: "Evadore",
+    backgroundColor1: "black", // This item will show the first background color
+    backgroundColor2: "white",
   },
   {
     image: "/assets/image7.png",
@@ -26,6 +28,8 @@ export const imageDetails = [
     id: "5",
     description: "2 piece Sweatshirt & Skirt",
     name: "Olive",
+    backgroundColor1: "#863000", // This item will show the first background color
+    backgroundColor2: "#696868",
   },
   {
     image: "/assets/image5.png",
@@ -33,6 +37,8 @@ export const imageDetails = [
     id: "5",
     description: "2 piece Sweatshirt & Skirt",
     name: "Olive",
+    backgroundColor1: "#863000", // This item will show the first background color
+    backgroundColor2: "#696868",
   },
   {
     image: "/assets/image.png",
@@ -40,6 +46,8 @@ export const imageDetails = [
     id: "2",
     description: "Short chiffon black dress",
     name: "Evadore",
+    backgroundColor1: "black", // This item will show the first background color
+    backgroundColor2: "white",
   },
   {
     image: "/assets/image1.png",
@@ -61,6 +69,8 @@ export const imageDetails = [
     id: "2",
     description: "Short chiffon black dress",
     name: "Evadore",
+    backgroundColor1: "black", // This item will show the first background color
+    backgroundColor2: "white",
   },
   {
     image: "/assets/image7.png",
@@ -75,6 +85,8 @@ export const imageDetails = [
     id: "5",
     description: "2 piece Sweatshirt & Skirt",
     name: "Olive",
+    backgroundColor1: "#863000", // This item will show the first background color
+    backgroundColor2: "#696868",
   },
   {
     image: "/assets/image1.png",
@@ -96,6 +108,8 @@ export const imageDetails = [
     id: "5",
     description: "2 piece Sweatshirt & Skirt",
     name: "Olive",
+    backgroundColor1: "#863000", // This item will show the first background color
+    backgroundColor2: "#696868",
   },
   {
     image: "/assets/image.png",
@@ -103,6 +117,8 @@ export const imageDetails = [
     id: "2",
     description: "Short chiffon black dress",
     name: "Evadore",
+    backgroundColor1: "black", // This item will show the first background color
+    backgroundColor2: "white",
   },
   {
     image: "/assets/image7.png",
@@ -117,7 +133,7 @@ export const navLinks = [
   { title: "WHAT'S NEW", url: "/new" },
   { title: "SALES", url: "/new" },
   { title: "SHOP", url: "/" },
-  { title: "COLLECTIONS", url: "/new" },
+  { title: "COLLECTIONS", url: "/product" },
   { title: "STORES", url: "/new" },
   { title: "BLOG", url: "/new" },
 ];

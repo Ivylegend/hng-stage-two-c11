@@ -41,7 +41,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
             <p className="text-[14px] font-bold uppercase">{itemData.name}</p>
           </div>
           <div>
-            <ItemCarousel image={itemData.image} />
+            <ItemCarousel images={itemData.images} />
           </div>
         </div>
 

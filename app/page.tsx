@@ -19,9 +19,24 @@ export default function Home() {
       <div className=" md:px-10 lg:px-20">
         {/* HERO */}
         <div className="flex items-center justify-center overflow-x-scroll px-5">
-          <Image src="/assets/big-jacket.png" alt="model" width={400} height={460} />
-          <Image src="/assets/image3.png" alt="model2" width={400} height={460} />
-          <Image src="/assets/image4.png" alt="model3" width={400} height={460} />
+          <Image
+            src="/assets/big-jacket.png"
+            alt="model"
+            width={400}
+            height={460}
+          />
+          <Image
+            src="/assets/image3.png"
+            alt="model2"
+            width={400}
+            height={460}
+          />
+          <Image
+            src="/assets/image4.png"
+            alt="model3"
+            width={400}
+            height={460}
+          />
         </div>
 
         <div className="my-5 py-5">
@@ -80,6 +95,8 @@ export default function Home() {
                 checkoutLink=""
                 description={item.description}
                 name={item.name}
+                backgroundColor1={item.backgroundColor1} // Add this line
+                backgroundColor2={item.backgroundColor2} // Add this line
               />
             ))}
           </div>

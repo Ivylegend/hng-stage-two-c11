@@ -6,6 +6,8 @@ interface ImageBoxProps {
   checkoutLink: string;
   name: string;
   description: string;
+  backgroundColor1?: string; // Add this line
+  backgroundColor2?: string; // Add this line
 }
 
 export const ImageBox: React.FC<ImageBoxProps> = ({
@@ -14,6 +16,8 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
   checkoutLink,
   name,
   description,
+  backgroundColor1, // Add this line
+  backgroundColor2, // Add this line
 }) => {
   return (
     <div className="hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md">
@@ -38,9 +42,22 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
         <p className="font-semibold text-xl">{name}</p>
         <p className="text-[#7E7E7E] text-sm md:text-normal">{description}</p>
         <p className="text-lg sm:text-xl md:text-2xl md:font-semibold">$150</p>
-        {/* <Button className="bg-black p-3 uppercase text-white rounded-none w-[132px]">
-          <Link href={checkoutLink}>add to cart</Link>
-        </Button> */}
+
+        {/* Conditionally render the divs with dynamic background colors */}
+        <div className="flex gap-2">
+          {backgroundColor1 && (
+            <div
+              style={{ backgroundColor: backgroundColor1 }}
+              className="w-6 h-6 border border-black"
+            ></div>
+          )}
+          {backgroundColor2 && (
+            <div
+              style={{ backgroundColor: backgroundColor2 }}
+              className="w-6 h-6 border border-gray-500"
+            ></div>
+          )}
+        </div>
       </div>
     </div>
   );

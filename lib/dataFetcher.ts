@@ -9,6 +9,13 @@ export async function getItemData(id: string) {
         "A stunning dress that exudes elegance and sophistication, perfect for any formal occasion. The intricate design and high-quality fabric ensure a comfortable and flattering fit. This dress is sure to make you stand out and leave a lasting impression.",
       price: 150,
       name: "Imani",
+      images: [
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+      ],
     },
     {
       image: "/assets/image.png",
@@ -18,6 +25,13 @@ export async function getItemData(id: string) {
         "An exquisite piece that combines classic charm with modern style. The dress features delicate details and a beautiful silhouette, making it ideal for both daytime and evening events. Crafted with care, it offers both comfort and style.",
       price: 120,
       name: "Evadore",
+      images: [
+        "/assets/caro1.png",
+        "/assets/caro2.png",
+        "/assets/caro3.png",
+        "/assets/caro2.png",
+        "/assets/caro1.png",
+      ],
     },
     {
       image: "/assets/image7.png",
@@ -27,6 +41,13 @@ export async function getItemData(id: string) {
         "This dress is the epitome of chic and sophistication. Its timeless design and luxurious fabric make it a versatile addition to any wardrobe. Perfect for special occasions, it offers a perfect blend of comfort and elegance.",
       price: 180,
       name: "Olessia",
+      images: [
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+      ],
     },
     {
       image: "/assets/image5.png",
@@ -36,6 +57,13 @@ export async function getItemData(id: string) {
         "A fashionable dress that stands out with its unique design and vibrant color. It is made from high-quality materials to ensure durability and comfort. Whether for a party or a casual outing, this dress is a perfect choice.",
       price: 130,
       name: "Olive",
+      images: [
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+      ],
     },
     {
       image: "/assets/image5.png",
@@ -45,6 +73,13 @@ export async function getItemData(id: string) {
         "This stylish dress features a contemporary design that is both elegant and trendy. Its comfortable fit and eye-catching details make it a must-have for any fashion-forward individual. Ideal for a variety of occasions.",
       price: 140,
       name: "Olive",
+      images: [
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+      ],
     },
     {
       image: "/assets/image.png",
@@ -54,6 +89,13 @@ export async function getItemData(id: string) {
         "A beautiful dress that combines elegance with simplicity. Its clean lines and subtle details make it suitable for any occasion, from casual gatherings to formal events. Crafted from high-quality fabric, it ensures comfort and durability.",
       price: 110,
       name: "Evadore",
+      images: [
+        "/assets/caro1.png",
+        "/assets/caro2.png",
+        "/assets/caro3.png",
+        "/assets/caro2.png",
+        "/assets/caro1.png",
+      ],
     },
     {
       image: "/assets/image1.png",
@@ -63,6 +105,13 @@ export async function getItemData(id: string) {
         "An elegant dress that features a classic design with a modern twist. Its flattering fit and exquisite details make it perfect for any special occasion. Made with premium materials, it promises both comfort and style.",
       price: 160,
       name: "Imani",
+      images: [
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+      ],
     },
     {
       image: "/assets/image7.png",
@@ -72,6 +121,13 @@ export async function getItemData(id: string) {
         "This dress is a blend of sophistication and charm, featuring a unique design that is sure to turn heads. Its high-quality fabric and impeccable craftsmanship ensure a comfortable and flattering fit for any occasion.",
       price: 170,
       name: "Olessia",
+      images: [
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+      ],
     },
     {
       image: "/assets/image.png",
@@ -81,6 +137,13 @@ export async function getItemData(id: string) {
         "A timeless piece that offers both elegance and comfort. The dress's classic design is enhanced by its luxurious fabric and meticulous details. Perfect for any event, it is a versatile addition to any wardrobe.",
       price: 125,
       name: "Evadore",
+      images: [
+        "/assets/caro1.png",
+        "/assets/caro2.png",
+        "/assets/caro3.png",
+        "/assets/caro2.png",
+        "/assets/caro1.png",
+      ],
     },
     {
       image: "/assets/image7.png",
@@ -90,6 +153,13 @@ export async function getItemData(id: string) {
         "An exquisite dress that combines classic elegance with contemporary style. Its beautiful design and high-quality fabric make it ideal for any special occasion. Crafted with care, it offers a comfortable and flattering fit.",
       price: 155,
       name: "Olessia",
+      images: [
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+      ],
     },
     {
       image: "/assets/image5.png",
@@ -99,6 +169,13 @@ export async function getItemData(id: string) {
         "This chic dress features a modern design that is both stylish and sophisticated. Its high-quality material ensures a comfortable fit, while its unique details add a touch of elegance. Perfect for any formal event.",
       price: 165,
       name: "Olive",
+      images: [
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+      ],
     },
     {
       image: "/assets/image1.png",
@@ -108,6 +185,13 @@ export async function getItemData(id: string) {
         "A stunning dress that exudes elegance and sophistication, perfect for any formal occasion. The intricate design and high-quality fabric ensure a comfortable and flattering fit. This dress is sure to make you stand out and leave a lasting impression.",
       price: 150,
       name: "Imani",
+      images: [
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+      ],
     },
     {
       image: "/assets/image1.png",
@@ -117,6 +201,13 @@ export async function getItemData(id: string) {
         "An exquisite piece that combines classic charm with modern style. The dress features delicate details and a beautiful silhouette, making it ideal for both daytime and evening events. Crafted with care, it offers both comfort and style.",
       price: 120,
       name: "Imani",
+      images: [
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+        "/assets/image1.png",
+      ],
     },
     {
       image: "/assets/image5.png",
@@ -126,6 +217,13 @@ export async function getItemData(id: string) {
         "This dress is the epitome of chic and sophistication. Its timeless design and luxurious fabric make it a versatile addition to any wardrobe. Perfect for special occasions, it offers a perfect blend of comfort and elegance.",
       price: 180,
       name: "Olive",
+      images: [
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+        "/assets/image5.png",
+      ],
     },
     {
       image: "/assets/image.png",
@@ -135,6 +233,13 @@ export async function getItemData(id: string) {
         "A fashionable dress that stands out with its unique design and vibrant color. It is made from high-quality materials to ensure durability and comfort. Whether for a party or a casual outing, this dress is a perfect choice.",
       price: 130,
       name: "Evadore",
+      images: [
+        "/assets/caro1.png",
+        "/assets/caro2.png",
+        "/assets/caro3.png",
+        "/assets/caro2.png",
+        "/assets/caro1.png",
+      ],
     },
     {
       image: "/assets/image7.png",
@@ -144,6 +249,13 @@ export async function getItemData(id: string) {
         "This stylish dress features a contemporary design that is both elegant and trendy. Its comfortable fit and eye-catching details make it a must-have for any fashion-forward individual. Ideal for a variety of occasions.",
       price: 140,
       name: "Olessia",
+      images: [
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+        "/assets/image7.png",
+      ],
     },
   ];
 

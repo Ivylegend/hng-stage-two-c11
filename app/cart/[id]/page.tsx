@@ -26,7 +26,7 @@ export default async function CartPage({ params }: ItemPageProps) {
           <div className="border-t border-b border-gray-200 py-4 flex flex-col md:flex-row w-full justify-between md:w-[650px]">
             <div className="flex gap-10">
               <Image
-                src={itemData.image}
+                src={itemData.images[0]}
                 alt="woman fashion"
                 width={150}
                 height={150}

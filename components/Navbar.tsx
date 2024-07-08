@@ -7,7 +7,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Italiana } from "next/font/google";
 
-const italiana = Italiana({ subsets: ["latin"], variable: "--font-sans", weight: "400" });
+const italiana = Italiana({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: "400",
+});
 
 export const Navbar = () => {
   const pathName = usePathname();
@@ -16,12 +20,22 @@ export const Navbar = () => {
       <div className="flex items-center justify-between my-5">
         <p>Shipping</p>
         {/* <p className={`capitalize font-normal text-[#1E1B1B] text-4xl ${italiana.className}`}>JANORE</p> */}
-        <img src="/assets/JANORE.svg" alt="logo" />
+        <Link href="/">
+          <img src="/assets/JANORE.svg" alt="logo" />
+        </Link>
         <div className="flex items-center gap-3">
           <p className="cursor-pointer">Nk Harry</p>
           <ChevronDown className="cursor-pointer" />
-          <img className="cursor-pointer" src="/assets/carticon.svg" alt="cart-icon" />
-          <img className="cursor-pointer" src="/assets/heart-vector.svg" alt="heart-icon" />
+          <img
+            className="cursor-pointer"
+            src="/assets/carticon.svg"
+            alt="cart-icon"
+          />
+          <img
+            className="cursor-pointer"
+            src="/assets/heart-vector.svg"
+            alt="heart-icon"
+          />
         </div>
       </div>
       <div className="flex justify-between items-center mt-10">
@@ -37,9 +51,12 @@ export const Navbar = () => {
 
             return (
               <Link
-                className={cn("text-gray-500 text-sm lg:text-base pb-2 hover:text-black", {
-                  "text-black border-b-2 border-black": isActive,
-                })}
+                className={cn(
+                  "text-gray-500 text-sm lg:text-base pb-2 hover:text-black",
+                  {
+                    "text-black border-b-2 border-black": isActive,
+                  }
+                )}
                 href={item.url}
                 key={item.title}
               >
@@ -50,7 +67,11 @@ export const Navbar = () => {
         </div>
         <div className="hidden lg:flex items-end gap-2 pb-2 border-b-2 border-black">
           <Search />
-          <input type="text" placeholder="Search here..." className="border-none focus:outline-none focus:border-none focus-visible:border-none" />
+          <input
+            type="text"
+            placeholder="Search here..."
+            className="border-none focus:outline-none focus:border-none focus-visible:border-none"
+          />
         </div>
       </div>
     </nav>
