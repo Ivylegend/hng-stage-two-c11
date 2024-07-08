@@ -124,7 +124,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
         {/* CATEGORIES */}
         <div className="mt-20 mb-10 md:my-20">
           <h2 className="font-medium text-lg sm:text-xl md:text-2xl mb-5">
-          WE THINK YOU'LL LOVE THIS
+          WE THINK YOU&apos;LL LOVE THIS
           </h2>
           <div className="flex overflow-x-auto gap-5 md:gap-0 md:flex-wrap justify-between">
             <ImageCard name="suit jackets" image="/assets/image2.png" />
