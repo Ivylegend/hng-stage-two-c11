@@ -35,8 +35,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
   return (
     <Dialog>
       <div>
-        <hr className="w-full h-[1px] my-6 bg-gray-300" />
-
+      <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
         <DialogContent>
           <DialogHeader>
             <DialogDescription className="flex flex-col items-center justify-center gap-10">
@@ -63,11 +62,11 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
-        <div className="py-10 px-20 flex items-start gap-10 justify-center">
-          <div className="w-3/5">
+        <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col md:flex-row items-start gap-10 justify-center">
+          <div className="w-full md:w-3/5">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="font-medium text-xl">
+                <AccordionTrigger className="font-medium text-base sm:text-lg md:text-xl">
                   Delivery Options
                 </AccordionTrigger>
                 <AccordionContent>
@@ -93,7 +92,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="font-medium text-xl">
+                <AccordionTrigger className="font-medium text-base sm:text-lg md:text-xl">
                   Customers Address
                 </AccordionTrigger>
                 <AccordionContent className="space-y-5 my-5">
@@ -188,7 +187,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger className="font-medium text-xl">
+                <AccordionTrigger className="font-medium text-base sm:text-lg md:text-xl">
                   Payment Methods
                 </AccordionTrigger>
                 <AccordionContent className="space-y-5">
@@ -279,7 +278,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
             </Accordion>
           </div>
 
-          <div className="w-1/5">
+          <div className="w-full md:w-1/5">
             <h2 className="mb-4">Cart Summary</h2>
             <div className="border-t border-b border-gray-200 py-4 flex flex-col justify-between gap-5">
               <div className="flex w-full justify-between">

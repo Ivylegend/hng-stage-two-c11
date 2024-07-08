@@ -18,11 +18,11 @@ export default async function CartPage({ params }: ItemPageProps) {
   }
   return (
     <div>
-      <hr className="w-full h-[1px] my-6 bg-gray-300" />
-      <div className="py-10 px-20 flex items-start gap-10 justify-center">
-        <div>
+      <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
+      <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col md:flex-row items-start gap-10 justify-center">
+        <div className="">
           <h2 className="mb-4">MY CART</h2>
-          <div className="border-t border-b border-gray-200 py-4 flex justify-between w-[650px]">
+          <div className="border-t border-b border-gray-200 py-4 flex flex-col md:flex-row w-full justify-between md:w-[650px]">
             <div className="flex gap-10">
               <Image
                 src={itemData.image}
@@ -63,15 +63,27 @@ export default async function CartPage({ params }: ItemPageProps) {
                     +
                   </Button>
                 </div>
+                <div className="flex flex-row md:hidden gap-2 mt-5 justify-between">
+                  <p className="underline text-xs sm:text-sm md:text-base cursor-pointer">
+                    Remove
+                  </p>
+                  <p className="underline text-xs sm:text-sm md:text-base cursor-pointer">
+                    Add to wishlist
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="flex flex-col justify-between">
-              <p className="underline cursor-pointer">Remove</p>
-              <p className="underline cursor-pointer">Add to wishlist</p>
+            <div className="hidden md:flex flex-row md:flex-col mt-5 md:mt-0 justify-between">
+              <p className="underline text-xs sm:text-sm md:text-base cursor-pointer">
+                Remove
+              </p>
+              <p className="underline text-xs sm:text-sm md:text-base cursor-pointer">
+                Add to wishlist
+              </p>
             </div>
           </div>
         </div>
-        <div className="w-1/5">
+        <div className="w-full md:w-1/5">
           <h2 className="mb-4">Cart Summary</h2>
           <div className="border-t border-b border-gray-200 py-4 flex justify-between">
             <p>{itemData.name}</p>
@@ -81,7 +93,9 @@ export default async function CartPage({ params }: ItemPageProps) {
             <p>Sub-total</p>
             <p>$1200</p>
           </div>
-          <Button className="w-full rounded-none my-6"><Link href={`/checkout/${itemData.id}`}>CHECKOUT</Link> </Button>
+          <Button className="w-full rounded-none my-6">
+            <Link href={`/checkout/${itemData.id}`}>CHECKOUT</Link>{" "}
+          </Button>
 
           {/* RETURNS */}
           <div className="border border-[#F0D3DC] bg-[#f7eef1] min-h-20 p-5">
@@ -94,7 +108,9 @@ export default async function CartPage({ params }: ItemPageProps) {
               We have return depots in Nigeria, London and Johanesburg. T&Cs
               apply
             </p>
-            <a href="" className="text-sm underline">Click here for information</a>
+            <a href="" className="text-sm underline">
+              Click here for information
+            </a>
           </div>
         </div>
       </div>

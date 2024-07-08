@@ -20,7 +20,7 @@ export const MobileFooter = () => {
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger className="font-medium text-lg">
-            Help
+            HELP
           </AccordionTrigger>
           <AccordionContent>
             <ul className="flex flex-col gap-5">
