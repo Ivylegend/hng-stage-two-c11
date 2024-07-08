@@ -115,7 +115,11 @@ export default async function ItemPage({ params }: ItemPageProps) {
                 className="rounded-none w-1/6 bg-transparent"
                 variant={"outline"}
               >
-                <img className="cursor-pointer" src="/assets/heart-vector.svg" alt="heart-icon" />
+                <img
+                  className="cursor-pointer"
+                  src="/assets/heart-vector.svg"
+                  alt="heart-icon"
+                />
               </Button>
             </div>
           </div>
@@ -124,10 +128,10 @@ export default async function ItemPage({ params }: ItemPageProps) {
         {/* CATEGORIES */}
         <div className="mt-20 mb-10 md:my-20">
           <h2 className="font-medium text-lg sm:text-xl md:text-2xl mb-5">
-          WE THINK YOU&apos;LL LOVE THIS
+            WE THINK YOU&apos;LL LOVE THIS
           </h2>
           <div className="flex overflow-x-auto gap-5 md:gap-0 md:flex-wrap justify-between">
-            <ImageCard name="suit jackets" image="/assets/image2.png" />
+            <ImageCard name="suit jackets" image="/assets/suit-jacket.png" />
             <ImageCard name="jumpsuit" image="/assets/image11.png" />
             <ImageCard name="loungewear" image="/assets/image12.png" />
             <ImageCard name="sweats" image="/assets/image5.png" />
