@@ -22,7 +22,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
   return (
     <div>
       <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
-      <div className="py-10 px-5 sm:p-10 md:px-20">
+      <div className="py-10 sm:p-10 md:px-20">
         <div className="px-0 sm:px-5">
           {/* ROUTES */}
           <div className="hidden md:flex gap-1 items-center mb-5">
@@ -46,7 +46,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
         </div>
 
         {/* PRODUCT DETAILS */}
-        <div className="flex flex-col-reverse md:flex-row w-full md:px-10 lg:px-40 md:items-start gap-20 mt-16 md:mt-32 mb-20">
+        <div className="flex px-5 flex-col-reverse md:flex-row w-full md:px-10 lg:px-40 md:items-start gap-20 mt-16 md:mt-32 mb-20">
           <div className="w-full md:w-3/5">
             <ItemAccordion />
           </div>
@@ -120,7 +120,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
         </div>
 
         {/* CATEGORIES */}
-        <div className="mt-20 mb-10 md:my-20">
+        <div className="mt-20 pl-5 mb-10 md:my-20">
           <h2 className="font-medium text-lg sm:text-xl md:text-2xl mb-5">
             WE THINK YOU&apos;LL LOVE THIS
           </h2>
@@ -131,7 +131,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
             <ImageCard name="sweats" image="/assets/image5.png" />
           </div>
         </div>
-        
+
       </div>
     </div>
   );
