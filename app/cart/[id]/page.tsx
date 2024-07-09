@@ -21,10 +21,10 @@ export default async function CartPage({ params }: ItemPageProps) {
     <div>
       <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
       <div className="py-10 px-5 sm:px-10 md:px-20 flex flex-col lg:flex-row items-start gap-10 md:gap-[72px] justify-center">
-        <div className="">
+        <div className="w-full md:w-fit">
           <h2 className="mb-4 font-medium text-xl">MY CART</h2>
-          <div className="border-t border-b border-gray-200 py-4 flex flex-col md:flex-row min-w-[332px] w-full justify-between md:w-[650px]">
-            <div className="flex gap-10 items-start">
+          <div className="border-t border-b border-gray-200 py-4 flex flex-col w-full md:flex-row justify-between md:w-[650px]">
+            <div className="flex gap-4 md:gap-10 items-start">
               <Image
                 src={itemData.images[0]}
                 alt="woman fashion"
@@ -32,7 +32,7 @@ export default async function CartPage({ params }: ItemPageProps) {
                 height={112}
                 className="object-cover"
               />
-              <div className="flex flex-col gap-3 justify-between">
+              <div className="flex flex-col gap-3 w-full justify-between">
                 <p className="font-medium text-base">{itemData.name}</p>
                 <div className="flex gap-4 w-24 justify-between">
                   <p>Color: </p>
