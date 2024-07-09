@@ -96,7 +96,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
                   Customers Address
                 </AccordionTrigger>
                 <AccordionContent className="space-y-5 my-5">
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 md:gap-4">
                     <div className="grid w-full max-w-sm items-center gap-1.5">
                       <Label htmlFor="email">First Name</Label>
                       <Input
@@ -116,7 +116,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
                       />
                     </div>
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 md:gap-4">
                     <div className="grid w-full max-w-sm items-center gap-1.5">
                       <Label htmlFor="email">Country</Label>
                       <Input
@@ -164,7 +164,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
                     />
                   </div>
 
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 md:gap-4">
                     <div className="grid w-full max-w-sm items-center gap-1.5">
                       <Label htmlFor="email">Phone Number</Label>
                       <Input

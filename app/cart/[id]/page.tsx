@@ -52,7 +52,7 @@ export default async function CartPage({ params }: ItemPageProps) {
                 <NumberCounter />
 
                 {/* for mobile */}
-                <div className="flex flex-row md:hidden gap-2 mt-5 justify-between">
+                <div className="flex flex-row md:hidden w-full gap-2 mt-5 justify-between">
                   <p className="underline text-xs sm:text-sm md:text-base cursor-pointer">
                     Remove
                   </p>
