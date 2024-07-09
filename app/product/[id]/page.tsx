@@ -103,11 +103,11 @@ export default async function ItemPage({ params }: ItemPageProps) {
 
             {/* BUTTON */}
             <div className="flex items-center gap-3 justify-between">
-              <Button className="rounded-none w-full h-12">
+              <Button className="rounded-none w-full h-11">
                 <Link href={`/cart/${itemData.id}`}>ADD TO CART</Link>
               </Button>
               <Button
-                className="rounded-none w-12 h-12 border-[#1E1B1B] flex items-center justify-center bg-transparent"
+                className="rounded-none w-12 h-11 border-[#1E1B1B] p-0 flex items-center justify-center bg-transparent"
                 variant={"outline"}
               >
                 <img

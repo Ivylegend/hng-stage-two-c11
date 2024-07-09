@@ -22,7 +22,10 @@ export function ItemCarousel({ images }: ItemCarouselProps) {
     >
       <CarouselContent className="">
         {images.map((image, index) => (
-          <CarouselItem key={index} className="pl-0 md:basis-1/2 gap-0 lg:basis-1/3">
+          <CarouselItem
+            key={index}
+            className="pl-0 md:basis-1/2 gap-0 lg:basis-1/3"
+          >
             <div className="">
               <img
                 src={image}

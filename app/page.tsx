@@ -14,94 +14,60 @@ import {
 import { imageDetails } from "@/constants";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [currentStep, setCurrentStep] = useState(0);
+  const images = [
+    "/assets/big-jacket.png",
+    "/assets/image3.png",
+    "/assets/image4.png",
+  ];
 
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
+    const interval = setInterval(() => {
+      setCurrentStep((prevStep) => (prevStep + 1) % images.length);
+    }, 5000); // Change the interval to match your animation duration
 
-    let scrollAmount = 0;
-
-    const scrollImages = () => {
-      scrollAmount += 1;
-      if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-        scrollAmount = 0;
-        scrollContainer.scrollLeft = 0;
-      } else {
-        scrollContainer.scrollLeft += 1;
-      }
-    };
-
-    const intervalId = setInterval(scrollImages, 10);
-
-    return () => clearInterval(intervalId);
-  }, []);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <main className="main mt-10">
       <div className=" md:px-10 lg:px-20">
         {/* HERO */}
-        <div className="scroll-container">
-          <div className="scroll-content">
-            <Image
-              src="/assets/big-jacket.png"
-              alt="model"
-              width={400}
-              height={460}
-            />
-            <Image
-              src="/assets/image3.png"
-              alt="model2"
-              width={400}
-              height={460}
-            />
-            <Image
-              src="/assets/image4.png"
-              alt="model3"
-              width={400}
-              height={460}
-            />
-            {/* Duplicate images to create the infinite scrolling effect */}
-            <Image
-              src="/assets/big-jacket.png"
-              alt="model"
-              width={400}
-              height={460}
-            />
-            <Image
-              src="/assets/image3.png"
-              alt="model2"
-              width={400}
-              height={460}
-            />
-            <Image
-              src="/assets/image4.png"
-              alt="model3"
-              width={400}
-              height={460}
-            />
-            {/* Duplicate images to create the infinite scrolling effect */}
-            <Image
-              src="/assets/big-jacket.png"
-              alt="model"
-              width={400}
-              height={460}
-            />
-            <Image
-              src="/assets/image3.png"
-              alt="model2"
-              width={400}
-              height={460}
-            />
-            <Image
-              src="/assets/image4.png"
-              alt="model3"
-              width={400}
-              height={460}
-            />
+        <div>
+          <div className="scroll-container">
+            <div className="scroll-content">
+              {images.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt={`model ${index + 1}`}
+                  width={400}
+                  height={460}
+                />
+              ))}
+              {/* Duplicate images to create the infinite scrolling effect */}
+              {images.map((image, index) => (
+                <Image
+                  key={images.length + index}
+                  src={image}
+                  alt={`model duplicate ${index + 1}`}
+                  width={400}
+                  height={460}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="indicators">
+            {images.map((_, index) => (
+              <div
+                key={index}
+                className={`indicator ${index === currentStep ? "active" : ""}`}
+              ></div>
+            ))}
           </div>
         </div>
 

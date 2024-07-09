@@ -115,3 +115,39 @@
   height: 460px;
   object-fit: cover;
 }
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  width: 10px;
+  height: 8px;
+  background-color: #E4E4E4;
+  border-radius: 10px;
+  margin: 0 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #D4B8C0;
+  transition: width 5s linear; /* Adjust the transition duration to match your scroll animation */
+}
+
+.indicator.active {
+  width: 20px; /* Adjust width for the active indicator */
+  height: 8px; /* Adjust height for the active indicator */
+}
+
+.indicator.active::before {
+  width: 100%;
+}
