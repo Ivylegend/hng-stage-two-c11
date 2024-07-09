@@ -1,5 +1,6 @@
 import { RadioGroupItems } from "./RadioGroup";
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 export const CTA = () => {
   return (
@@ -22,7 +23,7 @@ export const CTA = () => {
             <input
               type="text"
               placeholder="Enter email"
-              className="bg-transparent border-b border-black focus:ring-0 focus:outline-none w-full sm:w-[400px] px-5"
+              className="bg-transparent border-b pl-0 pb-2 border-black focus:ring-0 focus:outline-none w-full sm:w-[400px] px-5"
             />
             <Button className="py-3 px-4 bg-black rounded-none text-white w-full sm:w-[140px] hover:bg-gray-400 hover:text-black">
               SUBSCRIBE

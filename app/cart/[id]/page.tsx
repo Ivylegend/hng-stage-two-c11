@@ -24,22 +24,23 @@ export default async function CartPage({ params }: ItemPageProps) {
         <div className="">
           <h2 className="mb-4 font-medium text-xl">MY CART</h2>
           <div className="border-t border-b border-gray-200 py-4 flex flex-col md:flex-row w-full justify-between md:w-[650px]">
-            <div className="flex gap-10">
+            <div className="flex gap-10 items-start">
               <Image
                 src={itemData.images[0]}
                 alt="woman fashion"
-                width={150}
-                height={150}
+                width={102}
+                height={112}
+                className="object-cover"
               />
-              <div className="flex flex-col justify-between">
+              <div className="flex flex-col gap-3 justify-between">
                 <p className="font-medium text-base">{itemData.name}</p>
                 <div className="flex gap-4 w-24 justify-between">
                   <p>Color: </p>
-                  <div className="w-8 h-8 border bg-black"></div>
+                  <div className="w-6 h-6 md:w-8 md:h-8 border bg-black"></div>
                 </div>
                 <div className="flex gap-4 w-24 justify-between">
                   <p>Size: </p>
-                  <div className="w-8 h-8 border border-black text-center text-sm flex items-center justify-center">
+                  <div className="w-6 h-6 md:w-8 md:h-8 border border-black text-center text-sm flex items-center justify-center">
                     M
                   </div>
                 </div>

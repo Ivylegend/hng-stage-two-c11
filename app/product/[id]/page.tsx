@@ -8,6 +8,7 @@ import { ItemAccordion } from "@/components/ItemAccordion";
 import { Button } from "@/components/ui/button";
 import { ImageCard } from "@/components/ImageCard";
 import { NumberCounter } from "@/components/Counter";
+import { ImageBox } from "@/components/ImageBox";
 
 interface ItemPageProps {
   params: { id: string; image: string; description: string; price: number };
@@ -76,19 +77,19 @@ export default async function ItemPage({ params }: ItemPageProps) {
                 <p className="underline">Size Guide</p>
               </span>
               <div className="flex gap-2">
-                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
+                <div className="w-8 font-medium h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   XS
                 </div>
-                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
+                <div className="w-8 font-medium h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   S
                 </div>
-                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
+                <div className="w-8 font-medium h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   M
                 </div>
-                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
+                <div className="w-8 font-medium h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   L
                 </div>
-                <div className="w-8 h-8 border border-black text-center text-[10px] flex items-center justify-center">
+                <div className="w-8 font-medium h-8 border border-black text-center text-[10px] flex items-center justify-center">
                   XL
                 </div>
               </div>
@@ -102,11 +103,11 @@ export default async function ItemPage({ params }: ItemPageProps) {
 
             {/* BUTTON */}
             <div className="flex items-center gap-3 justify-between">
-              <Button className="rounded-none w-full">
+              <Button className="rounded-none w-full h-12">
                 <Link href={`/cart/${itemData.id}`}>ADD TO CART</Link>
               </Button>
               <Button
-                className="rounded-none w-1/6 bg-transparent"
+                className="rounded-none w-12 h-12 border-[#1E1B1B] flex items-center justify-center bg-transparent"
                 variant={"outline"}
               >
                 <img
@@ -125,13 +126,44 @@ export default async function ItemPage({ params }: ItemPageProps) {
             WE THINK YOU&apos;LL LOVE THIS
           </h2>
           <div className="flex overflow-x-auto gap-5 md:gap-0 md:flex-wrap justify-between">
-            <ImageCard name="suit jackets" image="/assets/suit-jacket.png" />
-            <ImageCard name="jumpsuit" image="/assets/image11.png" />
-            <ImageCard name="loungewear" image="/assets/image12.png" />
-            <ImageCard name="sweats" image="/assets/image5.png" />
+            <ImageBox
+              id={itemData.id}
+              name="Olive"
+              description="2 piece Sweatshirt & Skirt"
+              image="/assets/image5.png"
+              checkoutLink=""
+              backgroundColor1="#863000"
+              backgroundColor2="#696868"
+            />
+            <ImageBox
+              id={itemData.id}
+              name="Evadore"
+              description="Short chiffon black dress"
+              image="/assets/image.png"
+              checkoutLink=""
+              backgroundColor1="black"
+              backgroundColor2="white"
+            />
+            <ImageBox
+              id={itemData.id}
+              name="Imani"
+              description="Nude Maxi Bodycon dress"
+              image="/assets/image1.png"
+              checkoutLink=""
+              backgroundColor1=""
+              backgroundColor2=""
+            />
+            <ImageBox
+              id={itemData.id}
+              name="Olessia"
+              description="Midi Length crepe dress"
+              image="/assets/image7.png"
+              checkoutLink=""
+              backgroundColor1=""
+              backgroundColor2=""
+            />
           </div>
         </div>
-
       </div>
     </div>
   );

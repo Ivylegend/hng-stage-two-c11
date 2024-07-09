@@ -25,7 +25,7 @@ export const Navbar = () => {
         </Link>
         <div className="flex items-center gap-3">
           <p className="cursor-pointer">Nk Harry</p>
-          <ChevronDown className="cursor-pointer" />
+          <img src="/assets/down-arrow.png" alt="chevron down" className="cursor-pointer" />
           <img
             className="cursor-pointer"
             src="/assets/carticon.svg"
@@ -41,7 +41,7 @@ export const Navbar = () => {
       <div className="flex justify-between items-center mt-10">
         <span>
           <p className="flex items-center text-xs lg:text-base gap-1">
-            Language: EN <ChevronDown />
+            Language: EN <img src="/assets/down-arrow.png" alt="chevron down" />
           </p>
         </span>
         <div className="flex items-center gap-4 lg:gap-8">

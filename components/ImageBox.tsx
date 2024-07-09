@@ -21,15 +21,15 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
 }) => {
   return (
     <div className="hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md">
-      <div className="relative w-[150px] h-[200px] sm:w-[300px] sm:h-[400px] object-contain object-center">
-        <Link href={`/product/${id}`}>
+      <div className="relative w-[150px] h-[200px] sm:w-[300px] sm:h-[400px]">
+        <Link href={`/product/${id}`} className="w-full">
           <img
             src={image}
             alt="fashion women"
-            className="w-auto h-full sm:h-full sm:w-auto object-cover"
+            className="w-auto h-full sm:h-full sm:w-auto object-cover object-center"
           />
         </Link>
-        <div className="absolute z-10 bg-white rounded-full w-10 h-10 cursor-pointer right-3 top-3 flex items-center justify-center">
+        <div className="hidden absolute z-10 bg-white rounded-full w-10 h-10 cursor-pointer right-3 top-3 md:flex items-center justify-center">
           <img
             className="cursor-pointer"
             src="/assets/heart-vector.svg"

@@ -36,7 +36,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
     <Dialog>
       <div>
       <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
-        <DialogContent>
+        <DialogContent className="flex flex-col items-center ">
           <DialogHeader>
             <DialogDescription className="flex flex-col items-center justify-center gap-8 md:p-8">
               <div>
@@ -51,7 +51,7 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
                 <p className="font-medium text-xl text-black mb-4">Your order was successful</p>
                 <p className="text-[#1E1B1B] font-normal text-center">Thanks for your purchase!</p>
                 <p className="text-[#1E1B1B] font-normal text-center">Your order number is #123-456</p>
-                <p className="text-[#1E1B1B] font-normal text-center">You will receive an email comfirmining your order details</p>
+                <p className="text-[#1E1B1B] font-normal text-center">You will receive an email comfirming your order details</p>
               </div>
               <div className="flex flex-col items-center gap-5">
                 <Button className="rounded-none py-3 px-6 w-[300px]">Track my order</Button>
