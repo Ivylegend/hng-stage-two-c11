@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link";
+import { useState } from "react";
 
 interface ImageBoxProps {
   image: string;
@@ -21,9 +24,17 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
   backgroundColor2,
   className,
 }) => {
+  const [Color, setColor] = useState(false);
+
+  const setLike = () => {
+    setColor((prev) => !prev);
+  };
+
   return (
     <div className="hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md ">
-      <div className={`relative w-full h-[200px] sm:w-[300px] sm:h-[400px] ${className}`}>
+      <div
+        className={`relative w-full h-[200px] sm:w-[300px] sm:h-[400px] ${className}`}
+      >
         <div className="w-full h-full">
           <Link href={`/product/${id}`} className="w-full">
             <img
@@ -33,7 +44,7 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
             />
           </Link>
         </div>
-        <div className="hidden absolute z-10 bg-white rounded-full w-10 h-10 cursor-pointer right-3 top-3 md:flex items-center justify-center">
+        <div onClick={setLike} className={`hidden absolute z-10 ${Color ? "bg-red-400" : "bg-white"} rounded-full w-10 h-10 cursor-pointer right-3 top-3 md:flex items-center justify-center`}>
           <img
             className="cursor-pointer"
             src="/assets/heart-vector.svg"
