@@ -84,9 +84,9 @@ export default async function CartPage({ params }: ItemPageProps) {
             <p>Sub-total</p>
             <p>$1200</p>
           </div>
-          <Button className="w-full rounded-none my-6">
-            <Link href={`/checkout/${itemData.id}`}>CHECKOUT</Link>{" "}
-          </Button>
+          <Link href={`/checkout/${itemData.id}`}>
+            <Button className="w-full rounded-none my-6">CHECKOUT</Button>
+          </Link>
 
           {/* RETURNS */}
           <div className="border border-[#F0D3DC] bg-[#FEF7F9] min-h-[216px] min-w-[300px] p-5">

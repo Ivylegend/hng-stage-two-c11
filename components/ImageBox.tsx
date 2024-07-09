@@ -3,11 +3,12 @@ import Link from "next/link";
 interface ImageBoxProps {
   image: string;
   id: string;
-  checkoutLink: string;
+  checkoutLink?: string;
   name: string;
   description: string;
   backgroundColor1?: string;
   backgroundColor2?: string;
+  className?: string;
 }
 
 export const ImageBox: React.FC<ImageBoxProps> = ({
@@ -18,10 +19,11 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
   description,
   backgroundColor1,
   backgroundColor2,
+  className,
 }) => {
   return (
     <div className="hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md ">
-      <div className="relative w-full h-[200px] sm:w-[300px] sm:h-[400px]">
+      <div className={`relative w-full h-[200px] sm:w-[300px] sm:h-[400px] ${className}`}>
         <div className="w-full h-full">
           <Link href={`/product/${id}`} className="w-full">
             <img

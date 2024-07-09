@@ -103,9 +103,11 @@ export default async function ItemPage({ params }: ItemPageProps) {
 
             {/* BUTTON */}
             <div className="flex items-center gap-3 justify-between">
-              <Button className="rounded-none w-full h-11">
-                <Link href={`/cart/${itemData.id}`}>ADD TO CART</Link>
-              </Button>
+              <Link href={`/cart/${itemData.id}`} className="w-full">
+                <Button className="rounded-none w-full h-11">
+                  ADD TO CART
+                </Button>
+              </Link>
               <Button
                 className="rounded-none w-12 h-11 border-[#1E1B1B] p-0 flex items-center justify-center bg-transparent"
                 variant={"outline"}
@@ -121,46 +123,42 @@ export default async function ItemPage({ params }: ItemPageProps) {
         </div>
 
         {/* CATEGORIES */}
-        <div className="mt-20 pl-5 mb-10 md:my-20">
+        <div className="mt-20 px-5 mb-10 md:my-20">
           <h2 className="font-medium text-lg sm:text-xl md:text-2xl mb-5">
             WE THINK YOU&apos;LL LOVE THIS
           </h2>
-          <div className="flex overflow-x-auto gap-5 md:gap-0 md:flex-wrap justify-between">
+          <div className="flex w-full overflow-x-scroll gap-5 md:gap-0 md:flex-wrap justify-between">
             <ImageBox
               id={itemData.id}
               name="Olive"
               description="2 piece Sweatshirt & Skirt"
               image="/assets/image5.png"
-              checkoutLink=""
               backgroundColor1="#863000"
               backgroundColor2="#696868"
+              className="w-[250px]"
             />
             <ImageBox
               id={itemData.id}
               name="Evadore"
               description="Short chiffon black dress"
               image="/assets/image.png"
-              checkoutLink=""
               backgroundColor1="black"
               backgroundColor2="white"
+              className="w-[250px]"
             />
             <ImageBox
               id={itemData.id}
               name="Imani"
               description="Nude Maxi Bodycon dress"
               image="/assets/image1.png"
-              checkoutLink=""
-              backgroundColor1=""
-              backgroundColor2=""
+              className="w-[250px]"
             />
             <ImageBox
               id={itemData.id}
               name="Olessia"
               description="Midi Length crepe dress"
               image="/assets/image7.png"
-              checkoutLink=""
-              backgroundColor1=""
-              backgroundColor2=""
+              className="w-[250px]"
             />
           </div>
         </div>
