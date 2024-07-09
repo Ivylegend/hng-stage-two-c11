@@ -6,8 +6,8 @@ interface ImageBoxProps {
   checkoutLink: string;
   name: string;
   description: string;
-  backgroundColor1?: string; // Add this line
-  backgroundColor2?: string; // Add this line
+  backgroundColor1?: string;
+  backgroundColor2?: string;
 }
 
 export const ImageBox: React.FC<ImageBoxProps> = ({
@@ -16,19 +16,21 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
   checkoutLink,
   name,
   description,
-  backgroundColor1, // Add this line
-  backgroundColor2, // Add this line
+  backgroundColor1,
+  backgroundColor2,
 }) => {
   return (
-    <div className="hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md">
-      <div className="relative w-[150px] h-[200px] sm:w-[300px] sm:h-[400px]">
-        <Link href={`/product/${id}`} className="w-full">
-          <img
-            src={image}
-            alt="fashion women"
-            className="w-auto h-full sm:h-full sm:w-auto object-cover object-center"
-          />
-        </Link>
+    <div className="hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md ">
+      <div className="relative w-full h-[200px] sm:w-[300px] sm:h-[400px]">
+        <div className="w-full h-full">
+          <Link href={`/product/${id}`} className="w-full">
+            <img
+              src={image}
+              alt="fashion women"
+              className="w-full h-[200px] sm:h-full sm:w-auto object-cover object-top"
+            />
+          </Link>
+        </div>
         <div className="hidden absolute z-10 bg-white rounded-full w-10 h-10 cursor-pointer right-3 top-3 md:flex items-center justify-center">
           <img
             className="cursor-pointer"

@@ -25,7 +25,11 @@ export const Navbar = () => {
         </Link>
         <div className="flex items-center gap-3">
           <p className="cursor-pointer">Nk Harry</p>
-          <img src="/assets/down-arrow.png" alt="chevron down" className="cursor-pointer" />
+          <img
+            src="/assets/down-arrow.png"
+            alt="chevron down"
+            className="cursor-pointer"
+          />
           <img
             className="cursor-pointer"
             src="/assets/carticon.svg"
@@ -65,8 +69,8 @@ export const Navbar = () => {
             );
           })}
         </div>
-        <div className="hidden lg:flex items-end gap-2 pb-2 border-b-2 border-black">
-          <Search />
+        <div className="hidden lg:flex items-center gap-2 pb-1 border-b-2 border-[#1E1B1B]">
+          <img src="/assets/search.png" alt="search icon" />
           <input
             type="text"
             placeholder="Search here..."

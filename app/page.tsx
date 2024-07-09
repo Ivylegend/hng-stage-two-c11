@@ -173,7 +173,7 @@ export default function Home() {
             </div>
             <div className="w-1/2 flex items-center justify-center p-3 gap-2">
               Sort
-              <ChevronDown />
+              <img src="/assets/down-arrow.png" alt="chevron down" />
             </div>
           </div>
 
@@ -193,7 +193,7 @@ export default function Home() {
           </div>
           {/* PAGINATION */}
           <div className="my-8 flex flex-col justify-center items-center sm:flex-row sm:justify-between w-full gap-5 px-5 md:px-0">
-            <div className="w-full flex items-center gap-2 sm:w-1/2">
+            <div className="w-full flex justify-center md:justify-normal items-center gap-2 sm:w-1/2">
               <p className=" text-center sm:text-start">4 rows per page</p>
               <img
                 src="/assets/down-arrow.png"
