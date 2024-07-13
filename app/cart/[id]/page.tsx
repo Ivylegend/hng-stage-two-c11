@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { NumberCounter } from "@/components/Counter";
 import { useEffect, useState } from "react";
 import { SingleProduct } from "@/types/products";
+import Loader from "@/components/Loader";
 
 interface ItemPageProps {
   params: { id: string; image: string; description: string; price: number };
@@ -32,7 +33,7 @@ const CartPage: React.FC<ItemPageProps> = ({ params }) => {
   }, [params.id, router]);
 
   if (!itemData) {
-    return <div>Loading...</div>; // or a loading spinner
+    return <Loader />; // or a loading spinner
   }
 
   const imageUrl = `https://api.timbu.cloud/images/${itemData.photos[0].url}`;

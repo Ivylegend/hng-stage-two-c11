@@ -6,8 +6,8 @@ const HomePage = () => {
   return (
     <div className="flex items-center justify-center flex-col gap-4 h-[50vh]">
       <p>Nothing here yet</p>
-      {/* <Loader />
-      <Loader2 /> */}
+      <Loader />
+      <Loader2 />
       <Link href="/" className="font-semibold underline">
         Return Home
       </Link>

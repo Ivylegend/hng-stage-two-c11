@@ -24,6 +24,7 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SingleProduct } from "@/types/products";
+import Loader from "@/components/Loader";
 
 interface ItemPageProps {
   params: { id: string; image: string; description: string; price: number };
@@ -56,7 +57,7 @@ const CheckoutPage: React.FC<ItemPageProps> = ({ params }) => {
   }, []);
 
   if (!itemData) {
-    return <div>Loading...</div>; // or a loading spinner
+    return <Loader />; // or a loading spinner
   }
 
   const formatPrice = (price: number) => {

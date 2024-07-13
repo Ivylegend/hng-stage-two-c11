@@ -1,37 +1,18 @@
-"use client";
+// components/LoadingSpinner.tsx
 
-import { useState, CSSProperties } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import React from "react";
 
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
-
-function Loader() {
-  let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#ffffff");
-
+const Loader: React.FC = () => {
   return (
-    <div className="sweet-loading">
-      <button onClick={() => setLoading(!loading)}>Toggle Loader</button>
-      <input
-        value={color}
-        onChange={(input) => setColor(input.target.value)}
-        placeholder="Color of the loader"
-      />
-
-      <ClipLoader
-        color={color}
-        loading={loading}
-        cssOverride={override}
-        size={150}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />
+    <div className="flex justify-center items-center min-h-screen">
+      <div
+        className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
+        role="status"
+      >
+        <span className="visually-hidden"></span>
+      </div>
     </div>
   );
-}
+};
 
 export default Loader;

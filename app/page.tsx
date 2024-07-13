@@ -23,6 +23,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { getProducts } from "@/lib/actions";
+import Loader from "@/components/Loader";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -131,11 +132,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
-          {loading && <p>Loading...</p>}
-          {error && <p>Error: {error}</p>}
-        </div>
-
         <div className="my-5 py-5">
           {/* FOR DESKTOP ONLY */}
           <div className="hidden md:flex justify-between items-center my-8">
@@ -206,6 +202,12 @@ export default function Home() {
               Sort
               <img src="/assets/down-arrow.png" alt="chevron down" />
             </div>
+          </div>
+
+          {/* LOADING STATES */}
+          <div>
+            {loading && <Loader />}
+            {error && <p>Error: {error}</p>}
           </div>
 
           <div className="grid grid-cols-2 gap-x-4 sm:flex my-8 md:my-0 flex-wrap justify-between gap-y-16 px-5 md:px-0">
