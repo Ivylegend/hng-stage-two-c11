@@ -259,11 +259,8 @@
 //     },
 //   ];
 
-import { Product, SingleProduct } from "@/types/products";
-import { fetchProductById } from "./fetchProducts";
-
-//   return items.find((item) => item.id === id) || null;
-// }
+import { SingleProduct } from "@/types/products";
+import { fetchProductById } from "./actions";
 
 export async function getItemData(id: string): Promise<SingleProduct | null> {
   try {

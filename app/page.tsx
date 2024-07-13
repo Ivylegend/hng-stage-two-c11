@@ -25,6 +25,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { getProducts } from "@/lib/actions";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -54,10 +55,11 @@ export default function Home() {
       setLoading(true);
       setError(null);
       try {
-        const data: ProductsResponse = await fetchProducts(
+        const data: ProductsResponse = await getProducts(
           currentPage,
           itemsPerPage
         );
+        console.log("Fetched Data:", data); // Log the fetched data
         setProducts(data.items);
         setTotal(data.total);
       } catch (error) {

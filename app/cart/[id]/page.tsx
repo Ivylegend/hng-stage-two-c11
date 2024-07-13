@@ -2,7 +2,7 @@
 
 // product/[id]/page.tsx
 import Link from "next/link";
-import { notFound, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { getItemData } from "@/lib/dataFetcher";
 import { Button } from "@/components/ui/button";
 import { NumberCounter } from "@/components/Counter";

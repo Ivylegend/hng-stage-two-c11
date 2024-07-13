@@ -87,8 +87,10 @@ export interface ProductsResponse {
   page: number;
   size: number;
   total: number;
-  debug: any;
-  previous_page: string | null;
-  next_page: string | null;
+  debug?: any;
+  message?: string;
+  previous_page?: string | null;
+  next_page?: string | null;
   items: Product[];
+  status?: number;
 }
