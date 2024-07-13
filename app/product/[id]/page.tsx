@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { NumberCounter } from "@/components/Counter";
 import { ImageBox } from "@/components/ImageBox";
 import { formatPrice } from "@/lib/actions";
+import { ImageCard } from "@/components/ImageCard";
 
 interface ItemPageProps {
   params: { id: string };
@@ -132,42 +133,10 @@ export default async function ItemPage({ params }: ItemPageProps) {
             WE THINK YOU&apos;LL LOVE THIS
           </h2>
           <div className="flex w-full overflow-x-scroll gap-5 md:gap-0 md:flex-wrap justify-between">
-            <ImageBox
-              id={itemData.id}
-              name="Olive"
-              description="2 piece Sweatshirt & Skirt"
-              image="/assets/image5.png"
-              backgroundColor1="#863000"
-              backgroundColor2="#696868"
-              className="w-[250px]"
-              price={itemData.current_price}
-            />
-            <ImageBox
-              id={itemData.id}
-              name="Evadore"
-              description="Short chiffon black dress"
-              image="/assets/image.png"
-              backgroundColor1="black"
-              backgroundColor2="white"
-              className="w-[250px]"
-              price={itemData.current_price}
-            />
-            <ImageBox
-              id={itemData.id}
-              name="Imani"
-              description="Nude Maxi Bodycon dress"
-              image="/assets/image1.png"
-              className="w-[250px]"
-              price={itemData.current_price}
-            />
-            <ImageBox
-              id={itemData.id}
-              name="Olessia"
-              description="Midi Length crepe dress"
-              image="/assets/image7.png"
-              className="w-[250px]"
-              price={itemData.current_price}
-            />
+            <ImageCard name="Olive" image="/assets/image5.png" />
+            <ImageCard name="Evadore" image="/assets/image.png" />
+            <ImageCard name="Imani" image="/assets/image1.png" />
+            <ImageCard name="Olessia" image="/assets/image7.png" />
           </div>
         </div>
       </div>
