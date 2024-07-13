@@ -3,7 +3,6 @@
 import { CTA } from "@/components/CTA";
 import { ImageBox } from "@/components/ImageBox";
 import { ImageCard } from "@/components/ImageCard";
-// import { PaginationBox } from "@/components/PaginationBox";
 import {
   Select,
   SelectContent,
@@ -11,9 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { fetchProducts } from "@/lib/fetchProducts";
 import { Product, ProductsResponse } from "@/types/products";
-// import { imageDetails } from "@/constants";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {

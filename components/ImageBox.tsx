@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -32,6 +32,14 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
     setColor((prev) => !prev);
   };
 
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+      minimumFractionDigits: 0,
+    }).format(price);
+  };
+
   return (
     <div className="hover:shadow-lg cursor-pointer transition-shadow hover:rounded-md ">
       <div
@@ -46,7 +54,12 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
             />
           </Link>
         </div>
-        <div onClick={setLike} className={`hidden absolute z-10 ${Color ? "bg-red-400" : "bg-white"} rounded-full w-10 h-10 cursor-pointer right-3 top-3 md:flex items-center justify-center`}>
+        <div
+          onClick={setLike}
+          className={`hidden absolute z-10 ${
+            Color ? "bg-red-400" : "bg-white"
+          } rounded-full w-10 h-10 cursor-pointer right-3 top-3 md:flex items-center justify-center`}
+        >
           <img
             className="cursor-pointer"
             src="/assets/heart-vector.svg"
@@ -58,7 +71,9 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
       <div className="p-3 flex flex-col gap-1 items-start">
         <p className="font-semibold text-xl">{name}</p>
         <p className="text-[#7E7E7E] text-sm md:text-normal">{description}</p>
-        <p className="text-lg sm:text-xl md:text-2xl md:font-semibold">₦{price}</p>
+        <p className="text-lg sm:text-xl md:text-2xl md:font-semibold">
+          {formatPrice(price)}
+        </p>
 
         {/* Conditionally render the divs with dynamic background colors */}
         <div className="flex gap-2">

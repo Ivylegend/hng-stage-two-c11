@@ -8,6 +8,7 @@ import { ItemAccordion } from "@/components/ItemAccordion";
 import { Button } from "@/components/ui/button";
 import { NumberCounter } from "@/components/Counter";
 import { ImageBox } from "@/components/ImageBox";
+import { formatPrice } from "@/lib/actions";
 
 interface ItemPageProps {
   params: { id: string };
@@ -58,7 +59,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
             <div className="flex flex-col gap-2">
               <p className="font-semibold text-lg">{itemData.name}</p>
               <p className="font-medium text-lg text-[#606060]">
-                ₦{itemData.current_price}
+                {formatPrice(itemData.current_price || 0)}
               </p>
             </div>
 

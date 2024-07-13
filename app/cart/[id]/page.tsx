@@ -16,7 +16,7 @@ interface ItemPageProps {
 const CartPage: React.FC<ItemPageProps> = ({ params }) => {
   const [itemData, setItemData] = useState<SingleProduct | null>(null);
   const router = useRouter();
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -106,9 +106,16 @@ const CartPage: React.FC<ItemPageProps> = ({ params }) => {
             <p>Sub-total</p>
             <p>₦{totalPrice}</p>
           </div>
-          <Link href={`/checkout/${itemData.id}?totalPrice=${totalPrice}`}>
-            <Button className="w-full rounded-none my-6">CHECKOUT</Button>
-          </Link>
+          {/* Disable checkout button if count is 0 */}
+          {count > 0 ? (
+            <Link href={`/checkout/${itemData.id}?totalPrice=${totalPrice}`}>
+              <Button className="w-full rounded-none my-6">CHECKOUT</Button>
+            </Link>
+          ) : (
+            <Button className="w-full rounded-none my-6" disabled>
+              CHECKOUT
+            </Button>
+          )}
 
           {/* RETURNS */}
           <div className="border border-[#F0D3DC] bg-[#FEF7F9] min-h-[216px] min-w-[300px] p-5">
