@@ -1,21 +1,43 @@
+"use client";
+
 // product/[id]/page.tsx
-import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { getItemData } from "@/lib/dataFetcher";
 import { Button } from "@/components/ui/button";
 import { NumberCounter } from "@/components/Counter";
+import { useEffect, useState } from "react";
+import { SingleProduct } from "@/types/products";
 
 interface ItemPageProps {
   params: { id: string; image: string; description: string; price: number };
 }
 
-export default async function CartPage({ params }: ItemPageProps) {
-  const itemData = await getItemData(params.id);
+const CartPage: React.FC<ItemPageProps> = ({ params }) => {
+  const [itemData, setItemData] = useState<SingleProduct | null>(null);
+  const router = useRouter();
+  const [count, setCount] = useState<number>(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getItemData(params.id);
+      if (!data) {
+        router.push("/404"); // Redirect to 404 page if data not found
+      } else {
+        setItemData(data);
+      }
+    };
+
+    fetchData();
+  }, [params.id, router]);
 
   if (!itemData) {
-    return notFound();
+    return <div>Loading...</div>; // or a loading spinner
   }
+
+  const imageUrl = `https://api.timbu.cloud/images/${itemData.photos[0].url}`;
+
+  const totalPrice = itemData.current_price * count;
 
   return (
     <div>
@@ -25,8 +47,8 @@ export default async function CartPage({ params }: ItemPageProps) {
           <h2 className="mb-4 font-medium text-xl">MY CART</h2>
           <div className="border-t border-b border-gray-200 py-4 flex flex-col w-full md:flex-row justify-between md:w-[650px]">
             <div className="flex gap-4 md:gap-10 items-start">
-              <Image
-                src={itemData.images[0]}
+              <img
+                src={imageUrl}
                 alt="woman fashion"
                 width={102}
                 height={112}
@@ -46,10 +68,10 @@ export default async function CartPage({ params }: ItemPageProps) {
                 </div>
                 <div className="flex gap-4 w-24 justify-between">
                   <p>Price: </p>
-                  <div className="">${itemData.price}</div>
+                  <div className="">₦{itemData.current_price}</div>
                 </div>
                 {/* Counter */}
-                <NumberCounter />
+                <NumberCounter onCountChange={setCount} />
 
                 {/* for mobile */}
                 <div className="flex flex-row md:hidden w-full gap-2 mt-5 justify-between">
@@ -78,13 +100,13 @@ export default async function CartPage({ params }: ItemPageProps) {
           <h2 className="mb-4 font-medium text-xl">Cart Summary</h2>
           <div className="border-t border-b border-gray-200 py-4 flex justify-between">
             <p>{itemData.name}</p>
-            <p>${itemData.price}</p>
+            <p>₦{itemData.current_price}</p>
           </div>
           <div className="py-4 flex justify-between">
             <p>Sub-total</p>
-            <p>$1200</p>
+            <p>₦{totalPrice}</p>
           </div>
-          <Link href={`/checkout/${itemData.id}`}>
+          <Link href={`/checkout/${itemData.id}?totalPrice=${totalPrice}`}>
             <Button className="w-full rounded-none my-6">CHECKOUT</Button>
           </Link>
 
@@ -107,4 +129,6 @@ export default async function CartPage({ params }: ItemPageProps) {
       </div>
     </div>
   );
-}
+};
+
+export default CartPage;

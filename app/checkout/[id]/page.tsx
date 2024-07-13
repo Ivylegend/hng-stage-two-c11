@@ -1,6 +1,7 @@
-// product/[id]/page.tsx
+"use client";
+
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { getItemData } from "@/lib/dataFetcher";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,21 +22,55 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { SingleProduct } from "@/types/products";
 
 interface ItemPageProps {
   params: { id: string; image: string; description: string; price: number };
 }
 
-export default async function CheckoutPage({ params }: ItemPageProps) {
-  const itemData = await getItemData(params.id);
+const CheckoutPage: React.FC<ItemPageProps> = ({ params }) => {
+  const [itemData, setItemData] = useState<SingleProduct | null>(null);
+  const [totalPrice, setTotalPrice] = useState<number | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getItemData(params.id);
+      if (!data) {
+        router.push("/404"); // Redirect to 404 page if data not found
+      } else {
+        setItemData(data);
+      }
+    };
+
+    fetchData();
+  }, [params.id, router]);
+
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const totalPriceParam = query.get("totalPrice");
+    if (totalPriceParam) {
+      setTotalPrice(parseFloat(totalPriceParam));
+    }
+  }, []);
 
   if (!itemData) {
-    return notFound();
+    return <div>Loading...</div>; // or a loading spinner
   }
+
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+      minimumFractionDigits: 0,
+    }).format(price);
+  };
+
   return (
     <Dialog>
       <div>
-      <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
+        <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
         <DialogContent className="flex flex-col items-center ">
           <DialogHeader>
             <DialogDescription className="flex flex-col items-center justify-center gap-8 md:p-8">
@@ -48,13 +83,23 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <p className="font-medium text-xl text-black mb-4">Your order was successful</p>
-                <p className="text-[#1E1B1B] font-normal text-center">Thanks for your purchase!</p>
-                <p className="text-[#1E1B1B] font-normal text-center">Your order number is #123-456</p>
-                <p className="text-[#1E1B1B] font-normal text-center">You will receive an email comfirming your order details</p>
+                <p className="font-medium text-xl text-black mb-4">
+                  Your order was successful
+                </p>
+                <p className="text-[#1E1B1B] font-normal text-center">
+                  Thanks for your purchase!
+                </p>
+                <p className="text-[#1E1B1B] font-normal text-center">
+                  Your order number is {itemData.unique_id}
+                </p>
+                <p className="text-[#1E1B1B] font-normal text-center">
+                  You will receive an email confirming your order details
+                </p>
               </div>
               <div className="flex flex-col items-center gap-5">
-                <Button className="rounded-none py-3 px-6 w-[300px]">Track my order</Button>
+                <Button className="rounded-none py-3 px-6 w-[300px]">
+                  Track my order
+                </Button>
                 <Link href="/" className="underline">
                   Go back home
                 </Link>
@@ -283,19 +328,19 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
             <div className="border-t border-b border-gray-200 py-4 flex flex-col justify-between gap-5">
               <div className="flex w-full justify-between">
                 <p className="font-light text-sm">Item(s) total</p>
-                <p>$1200</p>
+                <p>{formatPrice(totalPrice || 0)}</p>
               </div>
               <div className="flex w-full justify-between">
                 <p className="font-light text-sm">Shipping Fees</p>
-                <p>$100</p>
+                <p>{formatPrice(3000)}</p>
               </div>
               <div className="flex w-full justify-between">
                 <p className="font-light text-sm">Delivery Fees</p>
-                <p>$100</p>
+                <p>{formatPrice(5500)}</p>
               </div>
               <div className="flex w-full justify-between">
                 <p className="font-light text-sm">Tax</p>
-                <p>$10</p>
+                <p>{formatPrice(1000)}</p>
               </div>
               <div className="grid w-full max-w-sm items-center gap-1.5">
                 <Label htmlFor="promo">Enter Promotional Code</Label>
@@ -312,15 +357,17 @@ export default async function CheckoutPage({ params }: ItemPageProps) {
             </div>
             <div className="py-4 flex justify-between">
               <p>Estimated-total</p>
-              <p>$1450</p>
+              <p>{formatPrice(totalPrice ? totalPrice + 8500 : 0)}</p>
             </div>
 
-            <DialogTrigger className="w-full">
-              <Button className="w-full rounded-none my-6">PAY $1450</Button>
+            <DialogTrigger className="rounded-none py-3 px-6 w-[300px] bg-black text-white flex items-center justify-center">
+              Place Order
             </DialogTrigger>
           </div>
         </div>
       </div>
     </Dialog>
   );
-}
+};
+
+export default CheckoutPage;

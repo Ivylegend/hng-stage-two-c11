@@ -8,7 +8,8 @@ interface ImageBoxProps {
   id: string;
   checkoutLink?: string;
   name: string;
-  description: string;
+  price: number;
+  description?: string;
   backgroundColor1?: string;
   backgroundColor2?: string;
   className?: string;
@@ -19,6 +20,7 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
   id,
   checkoutLink,
   name,
+  price,
   description,
   backgroundColor1,
   backgroundColor2,
@@ -38,7 +40,7 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
         <div className="w-full h-full">
           <Link href={`/product/${id}`} className="w-full">
             <img
-              src={image}
+              src={`https://api.timbu.cloud/images/${image}`}
               alt="fashion women"
               className="w-full h-[200px] sm:h-full sm:w-auto object-cover object-top"
             />
@@ -56,7 +58,7 @@ export const ImageBox: React.FC<ImageBoxProps> = ({
       <div className="p-3 flex flex-col gap-1 items-start">
         <p className="font-semibold text-xl">{name}</p>
         <p className="text-[#7E7E7E] text-sm md:text-normal">{description}</p>
-        <p className="text-lg sm:text-xl md:text-2xl md:font-semibold">$150</p>
+        <p className="text-lg sm:text-xl md:text-2xl md:font-semibold">₦{price}</p>
 
         {/* Conditionally render the divs with dynamic background colors */}
         <div className="flex gap-2">

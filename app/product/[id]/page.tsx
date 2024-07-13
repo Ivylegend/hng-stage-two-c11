@@ -6,12 +6,11 @@ import { getItemData } from "@/lib/dataFetcher";
 import { ItemCarousel } from "@/components/ItemCarousel";
 import { ItemAccordion } from "@/components/ItemAccordion";
 import { Button } from "@/components/ui/button";
-import { ImageCard } from "@/components/ImageCard";
 import { NumberCounter } from "@/components/Counter";
 import { ImageBox } from "@/components/ImageBox";
 
 interface ItemPageProps {
-  params: { id: string; image: string; description: string; price: number };
+  params: { id: string };
 }
 
 export default async function ItemPage({ params }: ItemPageProps) {
@@ -20,6 +19,10 @@ export default async function ItemPage({ params }: ItemPageProps) {
   if (!itemData) {
     return notFound();
   }
+
+  const imageUrl = `https://api.timbu.cloud/images/${itemData.photos[0].url}`;
+  const images = Array(5).fill(imageUrl);
+
   return (
     <div>
       <hr className="w-full hidden md:block h-[1px] my-6 bg-gray-300" />
@@ -42,7 +45,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
             <p className="text-[14px] font-bold uppercase">{itemData.name}</p>
           </div>
           <div>
-            <ItemCarousel images={itemData.images} />
+            <ItemCarousel images={images} />
           </div>
         </div>
 
@@ -55,7 +58,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
             <div className="flex flex-col gap-2">
               <p className="font-semibold text-lg">{itemData.name}</p>
               <p className="font-medium text-lg text-[#606060]">
-                ${itemData.price}
+                ₦{itemData.current_price}
               </p>
             </div>
 
@@ -136,6 +139,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
               backgroundColor1="#863000"
               backgroundColor2="#696868"
               className="w-[250px]"
+              price={itemData.current_price}
             />
             <ImageBox
               id={itemData.id}
@@ -145,6 +149,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
               backgroundColor1="black"
               backgroundColor2="white"
               className="w-[250px]"
+              price={itemData.current_price}
             />
             <ImageBox
               id={itemData.id}
@@ -152,6 +157,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
               description="Nude Maxi Bodycon dress"
               image="/assets/image1.png"
               className="w-[250px]"
+              price={itemData.current_price}
             />
             <ImageBox
               id={itemData.id}
@@ -159,6 +165,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
               description="Midi Length crepe dress"
               image="/assets/image7.png"
               className="w-[250px]"
+              price={itemData.current_price}
             />
           </div>
         </div>

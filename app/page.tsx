@@ -3,7 +3,7 @@
 import { CTA } from "@/components/CTA";
 import { ImageBox } from "@/components/ImageBox";
 import { ImageCard } from "@/components/ImageCard";
-import { PaginationBox } from "@/components/PaginationBox";
+// import { PaginationBox } from "@/components/PaginationBox";
 import {
   Select,
   SelectContent,
@@ -11,10 +11,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { imageDetails } from "@/constants";
-import { ChevronDown } from "lucide-react";
+import { fetchProducts } from "@/lib/fetchProducts";
+import { Product, ProductsResponse } from "@/types/products";
+// import { imageDetails } from "@/constants";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -31,6 +41,57 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [images.length]);
+
+  const [products, setProducts] = useState<Product[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 15;
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const data: ProductsResponse = await fetchProducts(
+          currentPage,
+          itemsPerPage
+        );
+        setProducts(data.items);
+        setTotal(data.total);
+      } catch (error) {
+        setError((error as Error).message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadProducts();
+  }, [currentPage]);
+
+  const totalPages = Math.ceil(total / itemsPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const imageDetails = products.map((product) => ({
+    id: product.id,
+    image: product.photos[0]?.url ?? "",
+    description: product.description ?? "",
+    name: product.name,
+    price: product.current_price[0]?.NGN[0] ?? 0,
+    backgroundColor1: "white",
+    backgroundColor2: "gray",
+  }));
 
   return (
     <main className="main mt-10">
@@ -69,6 +130,11 @@ export default function Home() {
               ></div>
             ))}
           </div>
+        </div>
+
+        <div>
+          {loading && <p>Loading...</p>}
+          {error && <p>Error: {error}</p>}
         </div>
 
         <div className="my-5 py-5">
@@ -152,13 +218,14 @@ export default function Home() {
                 checkoutLink=""
                 description={item.description}
                 name={item.name}
-                backgroundColor1={item.backgroundColor1} // Add this line
-                backgroundColor2={item.backgroundColor2} // Add this line
+                price={item.price}
+                backgroundColor1={item.backgroundColor1}
+                backgroundColor2={item.backgroundColor2}
               />
             ))}
           </div>
           {/* PAGINATION */}
-          <div className="my-8 flex flex-col justify-center items-center sm:flex-row sm:justify-between w-full gap-5 px-5 md:px-0">
+          {/* <div className="my-8 flex flex-col justify-center items-center sm:flex-row sm:justify-between w-full gap-5 px-5 md:px-0">
             <div className="w-full flex justify-center md:justify-normal items-center gap-2 sm:w-1/2">
               <p className=" text-center sm:text-start">4 rows per page</p>
               <img
@@ -168,8 +235,38 @@ export default function Home() {
               />
             </div>
             <PaginationBox />
-          </div>
+          </div> */}
+
+          <Pagination className="justify-center sm:justify-end">
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious onClick={handlePreviousPage} />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink className="bg-none border-0 w-full" isActive>
+                  Page {currentPage} of {totalPages}
+                </PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationNext onClick={handleNextPage} />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
         </div>
+        {/* <div>
+          <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+            Previous
+          </button>
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </div> */}
 
         {/* CATEGORIES */}
         <div className="mt-20 mb-10 md:my-20 px-5">
