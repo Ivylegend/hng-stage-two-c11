@@ -361,7 +361,7 @@ const CheckoutPage: React.FC<ItemPageProps> = ({ params }) => {
               <p>{formatPrice(totalPrice ? totalPrice + 8500 : 0)}</p>
             </div>
 
-            <DialogTrigger className="rounded-none py-3 px-6 w-[300px] bg-black text-white flex items-center justify-center">
+            <DialogTrigger className="rounded-none py-3 px-6 w-full sm:w-[300px] bg-black text-white flex items-center justify-center">
               Place Order
             </DialogTrigger>
           </div>
